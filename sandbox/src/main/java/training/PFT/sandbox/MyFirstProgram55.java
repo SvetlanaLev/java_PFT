@@ -1,1 +1,1 @@
-package training.PFT.sandbox;public class MyFirstProgram55 {    public static void main (String[] args){        System.out.print("Hello, World!");}}
+package training.PFT.sandbox;public class MyFirstProgram55 {  public static void main(String[] args) {    System.out.print("Hello, World!");  }}
