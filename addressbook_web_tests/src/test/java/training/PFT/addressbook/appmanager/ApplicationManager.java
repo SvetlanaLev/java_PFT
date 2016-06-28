@@ -1,6 +1,5 @@
 package training.PFT.addressbook.appmanager;
 
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -9,21 +8,14 @@ import java.util.concurrent.TimeUnit;
  * Created by User on 6/28/2016.
  */
 public class ApplicationManager {
-  FirefoxDriver wd;
+   FirefoxDriver wd;
 
   private ContactsHelper contactsHelper;
   private SessionHelper sessionHelper;
   private NavigationHelper navigationHelper;
   private GroupsHelper groupsHelper;
 
-  public static boolean isAlertPresent(FirefoxDriver wd) {
-      try {
-          wd.switchTo().alert();
-          return true;
-      } catch (NoAlertPresentException e) {
-          return false;
-      }
-  }
+
 
   public void init() {
     wd = new FirefoxDriver();

@@ -1,25 +1,22 @@
 package training.PFT.addressbook.appmanager;
 
+import com.sun.javafx.binding.ExpressionHelperBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Created by User on 6/28/2016.
  */
-public class SessionHelper {
-  private FirefoxDriver wd;
+public class SessionHelper extends HelperBase{
 
   public SessionHelper(FirefoxDriver wd) {
-    this.wd = wd;
+    super(wd);
   }
   public void login(String username, String password) {
-    wd.findElement(By.cssSelector("html")).click();
-    wd.findElement(By.name("user")).click();
-    wd.findElement(By.name("user")).clear();
-    wd.findElement(By.name("user")).sendKeys(username);
-    wd.findElement(By.name("pass")).click();
-    wd.findElement(By.name("pass")).clear();
-    wd.findElement(By.name("pass")).sendKeys(password);
-    wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+    click(By.cssSelector("html"));
+    type(By.name("user"), username);
+    type(By.name("pass"), password);
+    click(By.xpath("//form[@id='LoginForm']/input[3]"));
   }
+
 }
